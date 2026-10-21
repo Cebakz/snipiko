@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#344bb0" />
     <title>Snipiko — teste de anúncios</title>
     <link rel="icon" type="image/svg+xml" href="./icon.svg" />
-    <script type="module" crossorigin src="./assets/ads-CGec6TsD.js"></script>
+    <script type="module" crossorigin src="./assets/ads-55AMbgbQ.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/preload-helper-DMGCcr4D.js">
     <link rel="stylesheet" crossorigin href="./assets/ads-gfXfiv1Y.css">
   </head>
@@ -22,6 +22,17 @@
         <button id="revive" class="primary-button secondary">Testar anúncio de continuação</button>
       </div>
       <p id="status" role="status" aria-live="polite">Escolha um teste para começar.</p>
+      <details class="cadence-test"><summary>Simular frequência entre partidas</summary>
+        <p>Este relógio é só da simulação. No jogo, contam minutos reais de jogo ativo, sem menus, tutorial ou anúncios.</p>
+        <p id="cadence-clock" role="status">Preparando simulador…</p>
+        <div class="actions">
+          <button id="add-minute" class="primary-button secondary">Somar 1 minuto de jogo</button>
+          <button id="classic-replay" class="primary-button secondary">Perdi no Clássico: jogar novamente</button>
+          <button id="journey-win" class="primary-button secondary">Venci uma fase: próxima fase</button>
+          <button id="journey-loss" class="primary-button secondary">Perdi na Jornada: tentar novamente</button>
+        </div>
+        <p>A vitória na Jornada exige duas fases concluídas desde o último anúncio. Derrotas permitem uma tentativa ao recomeçar, respeitando o intervalo. A disponibilidade do Google ainda pode impedir a exibição.</p>
+      </details>
       <details><summary>Como conferir o resultado</summary><ol><li>Aceite assistir quando a oferta aparecer.</li><li>Conclua o anúncio e feche-o: o contador deve aumentar uma vez.</li><li>Em outra tentativa, recuse a oferta ou feche antes de concluir: o contador não deve aumentar.</li><li>O modo de teste também alterna casos sem anúncio disponível. Isso é esperado.</li></ol><p>No iPhone, abra o link no Safari. Se um bloqueador impedir o anúncio, o teste deve informar indisponibilidade e liberar os botões.</p></details>
       <details><summary>Eventos desta tentativa</summary><ol id="events"></ol></details>
       <a class="back" href="https://cebakz.github.io/snipiko/">Voltar ao jogo ↗</a>

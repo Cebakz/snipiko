@@ -14,11 +14,35 @@
     <link rel="manifest" href="./site.webmanifest?v=3" />
     <meta property="og:title" content="Snitrix" />
     <meta property="og:description" content="A number puzzle: draw rectangles to match the numbers and clear rows and columns." />
-    <script type="module" crossorigin src="./assets/index-BmlI0NNB.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BWEt8nmI.css">
-    <meta name="snipiko-version" content="2026-10-23.8">
+    <style>
+      /* Boot screen: painted before the game script loads, removed by main.ts. */
+      html, body { margin: 0; background: #2f3f97; }
+      #boot { position: fixed; inset: 0; z-index: 9999; display: grid; place-content: center; justify-items: center; gap: 26px;
+        background: radial-gradient(ellipse at 50% 30%, #6656c855, transparent 60%), linear-gradient(165deg, #353b8d, #245d9a);
+        transition: opacity .35s ease, visibility .35s; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+      #boot.done { opacity: 0; visibility: hidden; }
+      #boot .boot-logo { font-weight: 800; font-size: 64px; letter-spacing: -3px; line-height: 1; color: #ffcf58;
+        text-shadow: 0 3px 0 #c48738, 0 6px 0 #293f8c; animation: boot-pop .6s cubic-bezier(.2,1.4,.4,1) both; }
+      #boot .boot-logo span { color: #6de4ff; text-shadow: 0 3px 0 #279bc8, 0 6px 0 #293f8c; }
+      #boot .boot-row { display: grid; grid-template-columns: repeat(5, 22px); gap: 6px; padding: 7px; border-radius: 10px; background: #1d2a6bcc; }
+      #boot .boot-row i { width: 22px; height: 22px; border-radius: 5px; background: #ffffff14; animation: boot-fill 1.6s ease-in-out infinite; }
+      #boot .boot-row i:nth-child(1) { --c: #b49cff; animation-delay: 0s; }
+      #boot .boot-row i:nth-child(2) { --c: #ff8fb8; animation-delay: .12s; }
+      #boot .boot-row i:nth-child(3) { --c: #ffb170; animation-delay: .24s; }
+      #boot .boot-row i:nth-child(4) { --c: #8fe36b; animation-delay: .36s; }
+      #boot .boot-row i:nth-child(5) { --c: #6de4ff; animation-delay: .48s; }
+      #boot .boot-hint { color: #c9d8ff; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .8; }
+      @keyframes boot-pop { from { transform: scale(.6) translateY(12px); opacity: 0; } }
+      @keyframes boot-fill { 0%, 15% { background: #ffffff14; transform: scale(1); } 35% { background: var(--c); transform: scale(1.12); }
+        60% { background: var(--c); transform: scale(1); } 85%, 100% { background: #fff8; transform: scale(.4); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { #boot .boot-logo, #boot .boot-row i { animation: none; } #boot .boot-row i { background: var(--c); } }
+    </style>
+    <script type="module" crossorigin src="./assets/index-CqduHKy6.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-cELB3pQE.css">
+    <meta name="snipiko-version" content="2026-10-23.9">
   </head>
   <body>
+    <div id="boot" aria-hidden="true"><div class="boot-logo">sni<span>trix</span></div><div class="boot-row"><i></i><i></i><i></i><i></i><i></i></div><div class="boot-hint">Loading</div></div>
     <div id="app"></div>
   </body>
 </html>

@@ -4,3 +4,12 @@
 @media(max-width:850px){.hero{gap:35px;padding-block:50px}.hero-art{padding:22px}.cards{gap:12px}.card{padding:22px}.article-layout{grid-template-columns:1fr;gap:30px}.toc{position:static;display:flex;flex-wrap:wrap;gap:0 20px}.toc strong{width:100%}.toc a{margin:4px 0}.split{gap:35px}.header-inner{gap:15px}.nav{gap:4px 15px}.wrap{width:calc(100% - 40px)}}
 @media(max-width:620px){.wrap{width:calc(100% - 36px)}.header-inner{align-items:flex-start;flex-direction:column;padding:19px 0 14px;gap:14px}.brand{font-size:30px}.nav{font-size:12px;gap:3px 16px;width:100%}.nav .nav-play{padding:6px 13px;margin-left:auto}.hero{grid-template-columns:1fr;padding:42px 0 45px;gap:32px}.hero h1{font-size:44px;max-width:430px}.hero .lead{font-size:17px}.hero-art{max-width:380px;width:100%;margin:auto;padding:24px;transform:none}.hero-art figure{transform:none}.hero-art .cell{font-size:25px}.eyebrow{font-size:10px;margin-bottom:15px}.section{padding-block:42px}.section-top,.cta{display:block}.section-top p{margin-top:16px}.cards,.split,.help-links{grid-template-columns:1fr}.card{padding:25px}.step{margin-bottom:20px}.split{gap:23px}.mini-example{margin:0}.cta{padding:28px}.cta .button{margin-top:24px}.footer-top,.footer-bottom{display:block}.footer nav{margin:22px 0}.footer-bottom span{display:block;margin-top:6px}.page-hero{padding:38px 0 28px}.page-hero h1{font-size:39px}.page-hero .lead{font-size:17px}.article-layout{gap:25px;padding-bottom:45px}.article .example{grid-template-columns:1fr;padding:20px}.article .example .board{width:min(100%,280px);margin:auto}.compare{grid-template-columns:1fr}.compare .board{margin:auto}.article table{font-size:12px}.article th,.article td{padding:9px 6px}.contact-box{padding:22px}.button{padding:13px 21px;min-height:49px}.article h2{font-size:25px}.hero .actions{gap:14px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Keep the extra guide destination visible on narrow screens. */
+.nav a:focus-visible, .footer a:focus-visible, .article a:focus-visible { outline: 3px solid #344bb0; outline-offset: 3px; }
+@media (max-width: 540px) {
+  .header-inner { flex-wrap: wrap; gap: .35rem .9rem; }
+  .nav { flex-wrap: wrap; gap: .4rem .8rem; }
+  .header-inner .nav { width: 100%; }
+  .nav a { display: inline-flex; align-items: center; min-height: 32px; }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f9f8f2">
+  <title>Rectangle Workshop | Snitrix</title>
+  <meta name="description" content="Try three hand-built Snitrix boards. Compare legal rectangles, discover a two-line clear, and keep space open for the next clue.">
+  <link rel="canonical" href="https://cebakz.github.io/snipiko/workshop.html">
+  <link rel="icon" href="./icon.svg">
+  <link rel="stylesheet" href="./information.css">
+  <link rel="stylesheet" href="./workshop.css">
+  <script src="./workshop.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header"><div class="wrap header-inner">
+    <a class="brand" href="../" aria-label="Snitrix home"><span class="brand-sni">sni</span><span class="brand-trix">trix</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="./how-to-play.html">How to play</a><a href="./strategy.html">Strategy</a><a href="./workshop.html" aria-current="page">Workshop</a><a href="./about.html">About &amp; contact</a><a class="nav-play" href="./">Play</a></nav>
+  </div></header>
+  <main id="main" class="wrap">
+    <div class="page-hero"><h1>Rectangle Workshop</h1><p class="lead">Try a move, see what it leaves behind, and compare it with another choice.</p>
+      <p>These three boards were made by Cebakz Games for practice. They have no timer, score, clue refill or saved progress. Each choice starts from the same board.</p>
+      <nav class="lab-jumps" aria-label="Exercises"><a href="#one-clue">Valid rectangles</a><a href="#two-lines">Two-line clear</a><a href="#leave-room">Space for the next clue</a></nav>
+      <p>Read coordinates as column then row. A1–C2 spans columns A to C and rows 1 to 2. Choose an option and check the move, or open the solutions to read every result. The board descriptions and solutions also work with JavaScript disabled.</p>
+    </div>
+    <section class="lab" id="one-clue" data-lesson="one-clue">
+  <h2>One number, even when the area is right</h2>
+  <p class="lab-question">Which six-square rectangle can you place around the 6?</p>
+  <div class="lab-layout">
+    <figure class="lab-figure">
+      <div class="lab-coordinates" aria-hidden="true">
+        <div class="lab-cols"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <div class="lab-rows"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        <div class="lab-board" data-board=".......6.2.........#................"><span class="lab-cell empty" data-cell="A1"></span><span class="lab-cell empty" data-cell="B1"></span><span class="lab-cell empty" data-cell="C1"></span><span class="lab-cell empty" data-cell="D1"></span><span class="lab-cell empty" data-cell="E1"></span><span class="lab-cell empty" data-cell="F1"></span><span class="lab-cell empty" data-cell="A2"></span><span class="lab-cell clue" data-cell="B2">6</span><span class="lab-cell empty" data-cell="C2"></span><span class="lab-cell clue" data-cell="D2">2</span><span class="lab-cell empty" data-cell="E2"></span><span class="lab-cell empty" data-cell="F2"></span><span class="lab-cell empty" data-cell="A3"></span><span class="lab-cell empty" data-cell="B3"></span><span class="lab-cell empty" data-cell="C3"></span><span class="lab-cell empty" data-cell="D3"></span><span class="lab-cell empty" data-cell="E3"></span><span class="lab-cell empty" data-cell="F3"></span><span class="lab-cell empty" data-cell="A4"></span><span class="lab-cell block" data-cell="B4"></span><span class="lab-cell empty" data-cell="C4"></span><span class="lab-cell empty" data-cell="D4"></span><span class="lab-cell empty" data-cell="E4"></span><span class="lab-cell empty" data-cell="F4"></span><span class="lab-cell empty" data-cell="A5"></span><span class="lab-cell empty" data-cell="B5"></span><span class="lab-cell empty" data-cell="C5"></span><span class="lab-cell empty" data-cell="D5"></span><span class="lab-cell empty" data-cell="E5"></span><span class="lab-cell empty" data-cell="F5"></span><span class="lab-cell empty" data-cell="A6"></span><span class="lab-cell empty" data-cell="B6"></span><span class="lab-cell empty" data-cell="C6"></span><span class="lab-cell empty" data-cell="D6"></span><span class="lab-cell empty" data-cell="E6"></span><span class="lab-cell empty" data-cell="F6"></span></div>
+      </div>
+      <figcaption>Clue 6 at B2, clue 2 at D2, and a filled square at B4. All other squares are empty.</figcaption>
+    </figure>
+    <div>
+      <form class="lab-form" hidden>
+        <fieldset><legend>Choose a rectangle</legend><label class="lab-choice"><input type="radio" name="choice" value="0" data-start="A1" data-end="C2"> <span>A1–C2</span></label><label class="lab-choice"><input type="radio" name="choice" value="1" data-start="B2" data-end="D3"> <span>B2–D3</span></label><label class="lab-choice"><input type="radio" name="choice" value="2" data-start="A2" data-end="B4"> <span>A2–B4</span></label></fieldset>
+        <div class="lab-actions"><button class="button" type="submit">Check move</button><button class="lab-reset" type="reset">Reset board</button></div>
+        <p class="lab-result" role="status" aria-atomic="true"></p>
+      </form>
+      <details class="lab-answers"><summary>Compare the solutions</summary><ul><li data-legal="true" data-lines="0"><strong>A1–C2.</strong> <span>Legal. Three columns by two rows makes six. The 6 at B2 is the only clue in the rectangle.</span></li><li data-legal="false" data-lines="0"><strong>B2–D3.</strong> <span>Two clues. This rectangle also covers six squares, but it contains both 6 and 2. You can only place one clue at a time.</span></li><li data-legal="false" data-lines="0"><strong>A2–B4.</strong> <span>Blocked. This orientation has area six and contains the 6, but B4 is already filled. Rotate or move the rectangle around the clue.</span></li></ul><p>Check the contents as well as the area. Rotating a rectangle preserves its area, but changes which clues and blocks it covers.</p></details>
+    </div>
+  </div>
+</section>
+<section class="lab" id="two-lines" data-lesson="two-lines">
+  <h2>See the column as well as the row</h2>
+  <p class="lab-question">Both options are legal. Which opens the most space immediately?</p>
+  <div class="lab-layout">
+    <figure class="lab-figure">
+      <div class="lab-coordinates" aria-hidden="true">
+        <div class="lab-cols"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <div class="lab-rows"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        <div class="lab-board" data-board="...#.....#..###3.....#..2..#.....#.."><span class="lab-cell empty" data-cell="A1"></span><span class="lab-cell empty" data-cell="B1"></span><span class="lab-cell empty" data-cell="C1"></span><span class="lab-cell block" data-cell="D1"></span><span class="lab-cell empty" data-cell="E1"></span><span class="lab-cell empty" data-cell="F1"></span><span class="lab-cell empty" data-cell="A2"></span><span class="lab-cell empty" data-cell="B2"></span><span class="lab-cell empty" data-cell="C2"></span><span class="lab-cell block" data-cell="D2"></span><span class="lab-cell empty" data-cell="E2"></span><span class="lab-cell empty" data-cell="F2"></span><span class="lab-cell block" data-cell="A3"></span><span class="lab-cell block" data-cell="B3"></span><span class="lab-cell block" data-cell="C3"></span><span class="lab-cell clue" data-cell="D3">3</span><span class="lab-cell empty" data-cell="E3"></span><span class="lab-cell empty" data-cell="F3"></span><span class="lab-cell empty" data-cell="A4"></span><span class="lab-cell empty" data-cell="B4"></span><span class="lab-cell empty" data-cell="C4"></span><span class="lab-cell block" data-cell="D4"></span><span class="lab-cell empty" data-cell="E4"></span><span class="lab-cell empty" data-cell="F4"></span><span class="lab-cell clue" data-cell="A5">2</span><span class="lab-cell empty" data-cell="B5"></span><span class="lab-cell empty" data-cell="C5"></span><span class="lab-cell block" data-cell="D5"></span><span class="lab-cell empty" data-cell="E5"></span><span class="lab-cell empty" data-cell="F5"></span><span class="lab-cell empty" data-cell="A6"></span><span class="lab-cell empty" data-cell="B6"></span><span class="lab-cell empty" data-cell="C6"></span><span class="lab-cell block" data-cell="D6"></span><span class="lab-cell empty" data-cell="E6"></span><span class="lab-cell empty" data-cell="F6"></span></div>
+      </div>
+      <figcaption>Row 3 is filled at A3, B3 and C3, with clue 3 at D3. The rest of column D is already filled. A clue 2 sits at A5.</figcaption>
+    </figure>
+    <div>
+      <form class="lab-form" hidden>
+        <fieldset><legend>Choose a rectangle</legend><label class="lab-choice"><input type="radio" name="choice" value="0" data-start="A5" data-end="B5"> <span>A5–B5</span></label><label class="lab-choice"><input type="radio" name="choice" value="1" data-start="D3" data-end="F3"> <span>D3–F3</span></label></fieldset>
+        <div class="lab-actions"><button class="button" type="submit">Check move</button><button class="lab-reset" type="reset">Reset board</button></div>
+        <p class="lab-result" role="status" aria-atomic="true"></p>
+      </form>
+      <details class="lab-answers"><summary>Compare the solutions</summary><ul><li data-legal="true" data-lines="0"><strong>A5–B5.</strong> <span>Legal, but it clears no lines. Both squares stay filled and the 3 is still available for a later move.</span></li><li data-legal="true" data-lines="2"><strong>D3–F3.</strong> <span>Legal and clears row 3 and column D together. The two lines share D3, so they clear eleven distinct squares, not twelve. The clue 2 remains.</span></li></ul><p>Before placing a rectangle to finish a row, check whether any of its cells also complete a column. The two-line move clears eleven squares and leaves only the clue 2 on the board. The other move fills two squares without clearing a line.</p></details>
+    </div>
+  </div>
+</section>
+<section class="lab" id="leave-room" data-lesson="leave-room">
+  <h2>Give the next rectangle somewhere to fit</h2>
+  <p class="lab-question">Which placement keeps A4–C5 empty as a possible 3 × 2 space for a later 6?</p>
+  <div class="lab-layout">
+    <figure class="lab-figure">
+      <div class="lab-coordinates" aria-hidden="true">
+        <div class="lab-cols"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <div class="lab-rows"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        <div class="lab-board" data-board="..............4....................1"><span class="lab-cell empty" data-cell="A1"></span><span class="lab-cell empty" data-cell="B1"></span><span class="lab-cell empty" data-cell="C1"></span><span class="lab-cell empty" data-cell="D1"></span><span class="lab-cell empty" data-cell="E1"></span><span class="lab-cell empty" data-cell="F1"></span><span class="lab-cell empty" data-cell="A2"></span><span class="lab-cell empty" data-cell="B2"></span><span class="lab-cell empty" data-cell="C2"></span><span class="lab-cell empty" data-cell="D2"></span><span class="lab-cell empty" data-cell="E2"></span><span class="lab-cell empty" data-cell="F2"></span><span class="lab-cell empty" data-cell="A3"></span><span class="lab-cell empty" data-cell="B3"></span><span class="lab-cell clue" data-cell="C3">4</span><span class="lab-cell empty" data-cell="D3"></span><span class="lab-cell empty" data-cell="E3"></span><span class="lab-cell empty" data-cell="F3"></span><span class="lab-cell empty reserve" data-cell="A4"></span><span class="lab-cell empty reserve" data-cell="B4"></span><span class="lab-cell empty reserve" data-cell="C4"></span><span class="lab-cell empty" data-cell="D4"></span><span class="lab-cell empty" data-cell="E4"></span><span class="lab-cell empty" data-cell="F4"></span><span class="lab-cell empty reserve" data-cell="A5"></span><span class="lab-cell empty reserve" data-cell="B5"></span><span class="lab-cell empty reserve" data-cell="C5"></span><span class="lab-cell empty" data-cell="D5"></span><span class="lab-cell empty" data-cell="E5"></span><span class="lab-cell empty" data-cell="F5"></span><span class="lab-cell empty" data-cell="A6"></span><span class="lab-cell empty" data-cell="B6"></span><span class="lab-cell empty" data-cell="C6"></span><span class="lab-cell empty" data-cell="D6"></span><span class="lab-cell empty" data-cell="E6"></span><span class="lab-cell clue" data-cell="F6">1</span></div>
+      </div>
+      <figcaption>Clue 4 at C3 and clue 1 at F6. All other squares are empty. The space to keep open is columns A to C on rows 4 and 5.</figcaption>
+    </figure>
+    <div>
+      <form class="lab-form" hidden>
+        <fieldset><legend>Choose a rectangle</legend><label class="lab-choice"><input type="radio" name="choice" value="0" data-start="C3" data-end="D4"> <span>C3–D4</span></label><label class="lab-choice"><input type="radio" name="choice" value="1" data-start="A3" data-end="D3"> <span>A3–D3</span></label></fieldset>
+        <div class="lab-actions"><button class="button" type="submit">Check move</button><button class="lab-reset" type="reset">Reset board</button></div>
+        <p class="lab-result" role="status" aria-atomic="true"></p>
+      </form>
+      <details class="lab-answers"><summary>Compare the solutions</summary><ul><li data-legal="true" data-lines="0"><strong>C3–D4.</strong> <span>Legal as a 2 × 2, but it fills C4 and breaks the specific 3 × 2 space we wanted to keep. Other fits could still exist elsewhere.</span></li><li data-legal="true" data-lines="0"><strong>A3–D3.</strong> <span>Legal as a 4 × 1. All six squares of A4–C5 stay empty. This gives you one possible shape to use if a 6 later appears in a suitable spot.</span></li></ul><p>Useful room has a shape. In a real game NEXT shows values and the game chooses where clues land. Keeping one space open gives you an option, without guaranteeing the next move.</p></details>
+    </div>
+  </div>
+</section>
+    <div class="lab-next"><h2>Take the same checks into a game</h2><p>Check the clue, check the area, then ask what the board will look like afterward. In a real game, look at NEXT again after each move.</p><a class="button" href="./">Play Snitrix</a> <a href="./strategy.html#checklist">Read the move checklist</a></div>
+  </main>
+  <footer class="footer"><div class="wrap footer-top"><p>Cebakz Games · Updated <time datetime="2026-11-25">November 25, 2026</time></p><nav aria-label="Footer navigation"><a href="../">Home</a><a href="./about.html#support">Support</a><a href="./privacy.html">Privacy</a></nav></div></footer>
+</body>
+</html>
